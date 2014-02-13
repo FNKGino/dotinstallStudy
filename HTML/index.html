@@ -4,22 +4,19 @@
 		<meta charset-"utf-8">
 		<title>はじめてのHTML</title>
 	</head>
-		<body>
-			<form action="survey.php" method="post">
-				<p>
-					Colors:
-					<label><input type="radio" name="color" value="red">Red</label>
-					<input type="radio" name="color" value="blue" id="blue">Blue
-					<input type="radio" name="color" value="green">Green
-				</p>
-				<p>
-					Colors:
-					<input type="checkbox" name="color" value="red">Red
-					<input type="checkbox" name="color" value="blue">Blue
-					<input type="checkbox" name="color" value="green">Green
-				</p>
-				<label for="blue">blue</label>
-			<p><input type="submit" value="送信"></p>
-		</form>
+	<body>
+		<!--
+			div:汎用ブロック要素(前後に改行が入る)
+			span:汎用インライン要素(前後に改行が入らない)
+
+			id:unique
+			class:not unique
+		-->
+		<div id="main">
+		<p>こんにちは  こんにちは</p>
+		<p>こんにちは  こんにちは  <span class="notice">こんにちは</span></p>
+		</div>
+		<p>こんにちは  <span class="notice">こんにちは</span></p>
+		<p>こんにちは  こんにちは</p>
 	</body>
 </html>
