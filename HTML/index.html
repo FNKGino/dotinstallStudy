@@ -3,15 +3,14 @@
 	<head>
 		<meta charset-"utf-8">
 		<title>はじめてのHTML</title>
-	</head>"
+	</head>
 		<body>
 			<form action="survey.php" method="post">
-				<p>名前：<input type="text" name="name" required/></p>
-				<p>パスワード：<input type="password" name="password"></p>
-				<p><input type="hidden" name="user_id" value="32"/></p>
-				<p>日付：<input type="date" name="birthday"></p>
-				<p>URL：<input type="url" name="url"></p>
-				<p>email：<input type="email" name="email"></p>
+				<select name="color" size="5" multiple>
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+				</select>
 			<p><input type="submit" value="送信"></p>
 		</form>
 	</body>
