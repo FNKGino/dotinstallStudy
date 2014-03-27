@@ -10,5 +10,5 @@ dotinstallStudy
 
 3.JavaScript 実践編
 
-4.ExcelVBA 2/27~
+4.ExcelVBA 2/27~3/20
 
