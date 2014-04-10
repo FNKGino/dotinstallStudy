@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html ng-app lang="ja">
+	<head>
+		<meta charset-"utf-8">
+		<title>Angularの練習</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+		<script src="lib/myscript.js"></script>
+		<style>
+			
+			.odd{
+				background: blue;
+			}
+			.even{
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>AngularJSの練習</h1>
+		<input type="text" ng-model="name">
+		<p>Output:{{name|number}}</p>
+		<!-- number:数字のフォーマット オプションに小数点以下の桁数 なくても、カンマをつけてくれる-->
+		<p>Number:{{25*20000000|number}}</p>
+		<!-- 通貨 カンマ区切りは勝手にやってくれる デフォルトは＄日本円は-->
+		<p>Number:{{25*2000|currency:"\\"}}</p>
+		<!--Controllerに結び付ける-->
+		<div ng-controller="mainCtrl">
+			<!-- 配列の長さ取得 -->
+			<p>{{users.length}} users.</p>
+			<!-- 日付のフォーマット -->
+			<p>Date:{{today|date:'yyyy-MM-dd'}}</p>
+			<!-- 入力文字でフィルタも可能 -->
+			<p><input type="text" ng-model="query.name"></p>
+			<ul>
+				<!--//繰り返し処理-->
+				<!-- ループのフィルタ 
+					limitTo->件数制限
+					orderBy->指定したプロパティでソート,「-」つけると逆順
+					複数指定可能「|」で区切る
+					filter -> 変数を引数にとり、その変数で検索される
+					　　　　　　　　　特定のプロパティを対象とする場合、
+					　　　　　　　　　変数.プロパティ名で指定可能
+				-->
+				<!--  
+					ng-class-odd -> 奇数行のみに適用するcss
+					ng-class-even -> 偶数行のみに適用するcss
+				-->
+				<li ng-repeat="user in users|filter:query" ng-class-odd="'odd'" ng-class-even="'even'"
+				>
+					<!-- フィルタ
+						uppercase->大文字化
+						number->数字のフォーマット
+					 -->
+					 <!-- 
+						ループの便利な命令
+						index -> その要素が0から始まる何番目か
+						　　　　　　　　直接計算も可能なので、1からにしたい場合、+1すれば良い。
+
+						first ->その要素が一番最初か
+						middle -> その要素が一番最初でなく、最後でないか
+						last -> その要素が最後か
+						以上の条件がTrue/Falseで返却される
+					  -->
+					{{$index+1}}{{$first}}{{$middle}}{{$last}}{{user.name|uppercase}}:{{user.score|number:4}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
