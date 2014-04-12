@@ -45,8 +45,11 @@
 					ng-class-odd -> 奇数行のみに適用するcss
 					ng-class-even -> 偶数行のみに適用するcss
 				-->
+				<!-- Controllerはネストできる 
+					 親要素のControllerを利用できる
+				-->
 				<li ng-repeat="user in users|filter:query" ng-class-odd="'odd'" ng-class-even="'even'"
-				>
+				ng-controller="userItemCtrl">
 					<!-- フィルタ
 						uppercase->大文字化
 						number->数字のフォーマット
@@ -62,8 +65,53 @@
 						以上の条件がTrue/Falseで返却される
 					  -->
 					{{$index+1}}{{$first}}{{$middle}}{{$last}}{{user.name|uppercase}}:{{user.score|number:4}}
+					<button ng-click="increment()">+1</button>
 				</li>
 			</ul>
+			<!-- form 
+				 ng-submit:submitされた時の挙動を設定
+				 ng-model:の指定
+				 json:「|」前の値をJSON形式で表示
+				 novalidate:ブラウザのvalidation無効化
+				 angularjsのvalidation
+				 	required:入力必須
+				 	ng-minlnegth ="X":X文字以上
+				 	ng-maxlength ="X":X文字以下
+				 エラーメッセージの表示
+				 ng-show="フォーム.プロパティ名.$error.validationの種類"
+				 EmailやURLはinputタグで指定可能
+
+			-->
+			<form novalidate name="myName" ng-submit="addUser()">
+				<p>Name:<input type="text" name="name" ng-model="user.name" required ng-minlength="5" ng-maxlength="8"></p>
+				<span ng-show="myName.name.$error.required">Required!</span>
+				<span ng-show="myName.name.$error.minlength">Too Short!</span>
+				<span ng-show="myName.name.$error.maxlength">Too Long!</span>
+				<p>Score:<input type="number" name="score" ng-model="user.score" ></p>
+				<p>Email:<input type="email" name="email" ng-model="user.email" ></p>
+				<span ng-show="myName.email.$error.email">Not Valid Email!</span>
+				<p>Web:<input type="url" name="url" ng-model="user.url" ></p>
+				<span ng-show="myName.url.$error.url">Not Valid URL!</span>
+				<!-- チェックっボックス・ラジオボタン 
+					 ng-false[true]-value:チェックボックスがFalse[True]の時の値を設定する
+				-->
+				<p>18+:<input type="checkbox" ng-model="user.adult" ng-false-value="child"></p>
+				<p>Phone:
+					<input type="radio" ng-model="user.phone" value="iPhone">iPhone
+					<input type="radio" ng-model="user.phone" value="Android">Android
+				</p>
+				<p>Memo:
+					<textarea ng-model="user.memo" ng-maxlength="140"></textarea>{{140-user.memo.length}}
+				</p>
+				<!-- リストボックス -->
+				<p>
+					<select ng-model="user.color" ng-options="'label:'+color for color in ['red','blue','pink']" ng-init="user.color ='red'">
+
+					</select>
+				</p>	
+				<p><input type="submit" value="add"></p>
+			</form>
+			<p>{{user|json}}</p>
 		</div>
 	</body>
 </html>
