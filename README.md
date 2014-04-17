@@ -17,5 +17,6 @@ dotinstallStudy
 6.AngularJS  
 	公式サイト：http://angularjs.org/  
 	リファレンス：http://js.studio-kingdom.com/angularjs
+
 7.Ruby  
 	公式サイト：https://www.ruby-lang.org/ja/
