@@ -1,3 +1,5 @@
+#Lesson14
+
 #Lesson13
 #条件分岐(if else)
 =begin
@@ -11,9 +13,8 @@ else
 	puts %(NG)
 end
 # &&(and) ||(or) !(not)
-=end
-score = 100 
 puts "OK" if score > 80
+=end
 #Lesson12
 #%記法
 #文字列定義
