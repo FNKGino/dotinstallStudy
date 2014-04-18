@@ -1,3 +1,54 @@
+#Lesson19
+#クラス
+#メソッド
+#インスタンス
+#クラス名は必ず大文字から
+=begin
+class User
+	def initialize(name)
+		@name = name
+	end
+
+	def sayHi
+		puts "hello, my name is #{@name}"
+	end
+end
+tom = User.new("Tom")
+tom .sayHi()
+bob = User.new("Bob")
+bob .sayHi()
+=end
+#Lesson18
+#関数的メソッド
+=begin
+#引数の初期値を設定できる
+def sayHi(name="Inaba")
+	s = "hello! I'm "+name
+	#return は省略可
+	return s
+end
+#sayHi("sakamoto")
+#sayHi("tauchi")
+puts sayHi()
+=end
+
+#Lesson17		
+#for				
+=begin
+for i in 0..2 do
+	puts i
+end
+for color in ["red","blue","pink"] do
+	puts	color
+end
+#each
+["red","blue","pik"].each do |col|
+	puts col
+end
+{"red"=>200,"blue"=>100,"pik"=>500}.each do |col,pri|
+	puts "#{col}:#{pri}"
+end
+=end
 #Lesson16
 #繰り返し処理
 #times
