@@ -1,4 +1,98 @@
+#Lesson16
+#繰り返し処理
+#times
+#while
+
+=begin
+	
+#数値オブジェクト利用
+3.times do |i|
+	puts "#{i+1}:hello"
+end
+
+#条件利用
+c = 0
+while c<3 do
+	puts "#{c}:bye"
+	c += 1
+end
+
+#break:ループを抜ける
+3.times do |i|
+	if i==1
+		break
+	end
+	puts "#{i}:Hello"
+end
+#next:ループを一回スキップ
+3.times do |i|
+	if i==1
+		next
+	end
+	puts "#{i}:hollo"
+end
+=end
+#Lesson15
+=begin
+条件分岐:case
+
+case 比較したいオブジェクト
+when 値
+	処理
+when 値
+	処理
+else
+	処理
+end
+=end
+
+=begin
+	
+rescue Exception => e
+	
+end
+signal = "blue"
+
+case signal
+	when "red"
+		puts "STOP!"
+	when "yellow"
+		puts "CAUTION"
+	when "green","blue"
+		puts "GO!"
+	else
+		puts "wrong singnal"
+end
+=end
+		
+
+
 #Lesson14
+#真偽値と条件演算子
+=begin
+true:それ以外(0 ''を含む)
+false:false nil()オブジェクトが存在しない	
+
+if x 
+	puts "test"
+else 
+	a=c
+end
+
+条件が真の時はb,偽の時はc
+a = 条件 ? b:c
+
+=end
+
+#b = 10
+#c = 20
+
+#a= b>c ? b:c
+
+#多重代入
+#b,c = 200,300
+#a= b>c ? b:c
+#puts a
 
 #Lesson13
 #条件分岐(if else)
