@@ -1,3 +1,41 @@
+#Lesson22
+#Timeクラス
+#t = Time.now
+t = Time.new(1986,7,8,1,23,33)
+p t.strftime("Upated: %Y-%m-%d")
+#p t
+#t += 10
+#p t
+#p t
+#p t.year
+#p t.month
+#Lesson21
+#クラス継承
+=begin
+class User
+	def initialize(name)
+		@name = name #インスタンス変数
+	end
+
+	def sayHi #インスタンスメソッド
+		puts "hello, my name is #{@name}"
+	end
+end
+class SuperUser < User
+	def shout
+		puts "Hello! from #{@name}!"
+	end
+end
+
+tom = User.new("Tom")
+bob = SuperUser.new("Bob")
+
+tom.sayHi()
+bob.sayHi()
+bob.shout()
+=end
+#Lesson20
+#クラス変数とクラスメソッド
 #Lesson19
 #クラス
 #メソッド
@@ -5,18 +43,28 @@
 #クラス名は必ず大文字から
 =begin
 class User
+	@@count = 0 #クラス変数 Javaのstatic変数
 	def initialize(name)
-		@name = name
+		@name = name #インスタンス変数
+		@@count += 1
 	end
 
-	def sayHi
+	def sayHi #インスタンスメソッド
 		puts "hello, my name is #{@name}"
 	end
+
+	def User.sayHello #クラスメソッド JavaのStaticメソッド
+		puts "hello from User class(#{@@count} users)"
+	end
 end
+
+User.sayHello()
+
 tom = User.new("Tom")
-tom .sayHi()
+#tom .sayHi()
 bob = User.new("Bob")
-bob .sayHi()
+#bob .sayHi()
+User.sayHello()
 =end
 #Lesson18
 #関数的メソッド
