@@ -20,3 +20,6 @@ dotinstallStudy
 
 7.Ruby  
 	公式サイト：https://www.ruby-lang.org/ja/
+
+8.Ruby on Rails  
+        公式サイト：http://rubyonrails.org/
