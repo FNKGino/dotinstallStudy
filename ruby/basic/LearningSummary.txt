@@ -1,0 +1,44 @@
+Lesson2
+  コンソールに表示
+    p：データの形式が分かる用に表示
+    puts：改行あり表示
+    print：改行なし表示
+
+Lesson3
+  変数：英小文字から始まる
+    ex.message,hensu
+  定数：英大文字から始まる(全部大文字のことが多い)
+    ex.MESSAGE,HENSU
+
+Lesson4
+  オブジェクト：データ
+  メソッド：クラス
+    ex.文字列クラス→String
+
+Lesson5
+  数値オブジェクト
+    四則演算(+-*/%)
+    四捨五入：round
+    自己代入
+      ex.x+=1
+
+Lesson6
+  文字列オブジェクト
+    文字列代入は、囲うものによって、できることが変わる
+      "(ダブルクォーテーション):変数展開・特殊文字(改行・タブ等)使用可能
+        ex.name = "test"
+           str = "Hello\t World\n,#{name}"
+          \tはタブとして、\nは改行として出力される
+          #{name}には、定義されているname変数の中身が表示される
+          よって表示される文字列は
+          Hello(タブ)World
+          ,test
+          となる
+      '(シングルクォーテーション)："と同じことはできない
+         ex.name = "test"
+           str = 'Hello\t World\n,#{name}'
+          \t、\n、#{name}はそのまま出力される
+          よって表示される文字列は
+          Hello\t World\n,#{name}
+          となる
+          
