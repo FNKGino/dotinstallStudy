@@ -41,4 +41,32 @@ Lesson6
           よって表示される文字列は
           Hello\t World\n,#{name}
           となる
-          
+
+Lesson7
+  メソッド
+    破壊的メソッド
+      語尾に「!」が付いているメソッド
+      メソッドの処理を変数に上書きする
+      ex.Stringクラスのupcaseメソッド
+          str = "test"
+          puts str
+          str.upcase!
+          puts str
+
+          表示は
+          test
+          TEST
+          となる
+    真偽値を返すメソッド
+      語尾に「?」が付いているメソッド
+      結果をtrueかfalseで返却する
+      ex.Stringクラスのemptyメソッド
+         str = ""
+         puts str.empty?
+         str = "test"
+         puts str.empty?
+
+         表示は
+         true
+         false
+         となる
