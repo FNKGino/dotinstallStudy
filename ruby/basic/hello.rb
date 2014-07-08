@@ -1,4 +1,4 @@
-#Lesson22
+#Lesson23
 #Timeクラス
 #t = Time.now
 t = Time.new(1986,7,8,1,23,33)
